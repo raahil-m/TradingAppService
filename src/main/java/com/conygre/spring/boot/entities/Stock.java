@@ -60,9 +60,10 @@ public class Stock implements Serializable {
         this.name = name;
     }
 
-    public Stock(String s, double p){
+    public Stock(String s, double p, String n){
         symbol=s;
         price=p;
+        name=n;
 
     }
 
