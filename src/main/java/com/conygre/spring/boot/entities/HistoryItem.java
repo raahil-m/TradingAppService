@@ -19,6 +19,16 @@ public class HistoryItem implements Serializable {
     @Column(name="current_price") private Double currentPrice;
     @Column(name="quantity") private Integer quantity;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Column(name="status") private String status;
+
     public Integer getQuantity() {
         return quantity;
     }
@@ -53,10 +63,11 @@ public class HistoryItem implements Serializable {
         this.currentPrice = price;
     }
 
-    public HistoryItem(String s, double p, Integer q){
+    public HistoryItem(String s, double p, Integer q, String st){
         symbol = s;
         currentPrice = p;
         quantity = q;
+        status = st;
     }
 
 
