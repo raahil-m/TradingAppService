@@ -5,6 +5,8 @@ import com.conygre.spring.boot.services.StockService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,6 +40,18 @@ public class StockController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     public void deleteStock(@PathVariable("id") int id) {
         service.deleteStock(id);
+    }
+
+    @RequestMapping(value="/with404/{id}", method=RequestMethod.GET)
+    public ResponseEntity<Stock> getStockByIdHandling404(@PathVariable("id") int id) {
+        Stock stockToReturn = service.getAllStocks().get(id);
+
+        if (stockToReturn ==null) {
+            return new ResponseEntity<Stock>(HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<Stock>(stockToReturn, HttpStatus.OK);
+        }
     }
 
 }

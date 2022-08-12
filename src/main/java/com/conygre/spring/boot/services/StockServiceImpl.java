@@ -16,12 +16,15 @@ public class StockServiceImpl implements StockService {
     private StockRepository dao;
 
 
+
     public List<Stock> getAllStocks() {
+
         return dao.findAll();
     }
 
     @Override
     public void addStock(Stock stock) {
+
         dao.save(stock);
     }
 
