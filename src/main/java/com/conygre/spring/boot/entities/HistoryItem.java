@@ -16,7 +16,7 @@ public class HistoryItem implements Serializable {
     private int id;
 
     @Column(name="symbol") private String symbol;
-    @Column(name="current_price") private Double price;
+    @Column(name="current_price") private Double currentPrice;
     @Column(name="quantity") private Integer quantity;
 
     public Integer getQuantity() {
@@ -45,17 +45,17 @@ public class HistoryItem implements Serializable {
         this.symbol = symbol;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getCurrentPrice() {
+        return currentPrice;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setCurrentPrice(Double price) {
+        this.currentPrice = price;
     }
 
     public HistoryItem(String s, double p, Integer q){
         symbol = s;
-        price = p;
+        currentPrice = p;
         quantity = q;
     }
 
