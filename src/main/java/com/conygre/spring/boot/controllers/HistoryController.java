@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -30,6 +32,8 @@ public class HistoryController {
             consumes="application/json")
     void addHistoryItem(@RequestBody HistoryItem item) {
         logger.info("POST: New history item");
+        Date date = new Date();
+        item.setOrderTime(new Timestamp(date.getTime()));
         service.addHistoryItem(item);
     }
 

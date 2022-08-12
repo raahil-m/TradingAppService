@@ -1,6 +1,8 @@
 
 package com.conygre.spring.boot.entities;
 import java.io.Serializable;
+import java.sql.Time;
+import java.sql.Timestamp;
 import javax.persistence.*;
 
 
@@ -17,7 +19,15 @@ public class HistoryItem implements Serializable {
 
     @Column(name="symbol") private String symbol;
     @Column(name="current_price") private Double currentPrice;
-    @Column(name="quantity") private Integer quantity;
+    @Column(name="order_time") private Timestamp orderTime;
+
+    public Timestamp getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(Timestamp orderTime) {
+        this.orderTime = orderTime;
+    }
 
     public String getStatus() {
         return status;
@@ -29,13 +39,6 @@ public class HistoryItem implements Serializable {
 
     @Column(name="status") private String status;
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 
     public HistoryItem() {}
 
@@ -63,10 +66,10 @@ public class HistoryItem implements Serializable {
         this.currentPrice = price;
     }
 
-    public HistoryItem(String s, double p, Integer q, String st){
+    public HistoryItem(String s, double p, Timestamp o, String st){
         symbol = s;
         currentPrice = p;
-        quantity = q;
+        orderTime = o;
         status = st;
     }
 
