@@ -17,7 +17,7 @@ public class SwaggerConfig {
         @Bean
         public Docket newsApi() {
                 return new Docket(DocumentationType.SWAGGER_2)
-                        .groupName("compactdiscs")
+                        .groupName("stocks")
                         .apiInfo(apiInfo())
                         .select()
                         .paths(PathSelectors.any())
