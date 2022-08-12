@@ -24,6 +24,8 @@ public class Stock implements Serializable {
     @Column(name="symbol") private String symbol;
     @Column(name="price") private Double price;
 
+    @Column(name="name") private String name;
+
     public Stock() {}
 
     public int getId() {
@@ -48,6 +50,14 @@ public class Stock implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Stock(String s, double p){
