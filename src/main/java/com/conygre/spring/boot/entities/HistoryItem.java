@@ -20,6 +20,15 @@ public class HistoryItem implements Serializable {
     @Column(name="symbol") private String symbol;
     @Column(name="current_price") private Double currentPrice;
     @Column(name="order_time") private Timestamp orderTime;
+    @Column(name="type") private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Timestamp getOrderTime() {
         return orderTime;
@@ -66,11 +75,12 @@ public class HistoryItem implements Serializable {
         this.currentPrice = price;
     }
 
-    public HistoryItem(String s, double p, Timestamp o, String st){
+    public HistoryItem(String s, double p, Timestamp o, String st, String t){
         symbol = s;
         currentPrice = p;
         orderTime = o;
         status = st;
+        type = t;
     }
 
 
