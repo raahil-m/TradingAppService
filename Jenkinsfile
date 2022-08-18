@@ -31,6 +31,7 @@ pipeline {
         sh "oc project ${projectName} || oc new-project ${projectName}"
         sh "oc delete all --selector app=${projectName} || echo 'Unable to delete all previous openshift resources'"
         sh "oc new-app ${dockerImageTag} -l version=${version}"
+        sh "expose dc/trading-app-miss5 --port=8082"
         sh "oc expose svc/${projectName}"
       }
     }
