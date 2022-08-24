@@ -22,15 +22,15 @@ public class HistoryItem implements Serializable {
     @Column(name="order_time") private Timestamp orderTime;
     @Column(name="type") private String type;
 
-    public String getTradingPrice() {
+    public Double getTradingPrice() {
         return tradingPrice;
     }
 
-    public void setTradingPrice(String tradingPrice) {
+    public void setTradingPrice(Double tradingPrice) {
         this.tradingPrice = tradingPrice;
     }
 
-    @Column(name="trading_price") private String tradingPrice;
+    @Column(name="trading_price") private Double tradingPrice;
 
     public String getType() {
         return type;
