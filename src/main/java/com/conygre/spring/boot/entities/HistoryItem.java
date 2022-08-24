@@ -85,12 +85,13 @@ public class HistoryItem implements Serializable {
         this.currentPrice = price;
     }
 
-    public HistoryItem(String s, double p, Timestamp o, String st, String t){
+    public HistoryItem(String s, double p, Timestamp o, String st, String t, Double tp){
         symbol = s;
         currentPrice = p;
         orderTime = o;
         status = st;
         type = t;
+        tradingPrice = tp;
     }
 
 
