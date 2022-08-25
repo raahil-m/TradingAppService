@@ -9,6 +9,6 @@ public interface UserService {
     List<User> getAllUsers();
 
     //void addStock(Stock stock);
-    //void updateStock(int id, Stock stock);
+    void updateUser(int id, Double balance);
     //void deleteStock(int id);
 }

@@ -20,7 +20,13 @@ public class UserServiceImpl implements UserService{
     private UserRepository dao;
 
     public List<User> getAllUsers() {
-
         return dao.findAll();
+    }
+
+    @Override
+    public void updateUser(int id, Double balance) {
+            User retrievedUser = dao.findById(id).get();
+            retrievedUser.setBalance(balance);
+            dao.save(retrievedUser);
     }
 }

@@ -27,6 +27,11 @@ public class UserController {
         logger.info("managed to call a Get request for findAll");
         return service.getAllUsers();
     }
+    @RequestMapping(method=RequestMethod.PUT,  value = "/{id}",
+            consumes="application/json")
+    void updateDisc(@PathVariable("id") int id, @RequestBody User user) {
+        service.updateUser(id, user.getBalance());
+    }
 
 
 
