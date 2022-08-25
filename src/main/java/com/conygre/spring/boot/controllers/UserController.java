@@ -29,7 +29,7 @@ public class UserController {
     }
     @RequestMapping(method=RequestMethod.PUT,  value = "/{id}",
             consumes="application/json")
-    void updateDisc(@PathVariable("id") int id, @RequestBody User user) {
+    void updateUser(@PathVariable("id") int id, @RequestBody User user) {
         service.updateUser(id, user.getBalance());
     }
 
